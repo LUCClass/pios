@@ -1,0 +1,8 @@
+set confirm off
+target remote localhost:1234
+file kernel8.elf
+break _start
+continue
+layout src
+layout reg
+
