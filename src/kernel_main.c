@@ -1,14 +1,16 @@
-extern int __bss_start;
-extern int __bss_end;
 
-unsigned int global_var;
+char glbl[128];
 
 
 void kernel_main() {
-  char *begin_bss = &__bss_start;
-  char *end_bss   = &__bss_end;
 
-  for (int *current_bss = *begin_bss; *current_bss < *end_bss; *current_bss++){
-    *current_bss = 0;
+  extern int __bss_start, __bss_end;
+  char *bss_start, *bss_end;
+
+  bss_start = &__bss_start;
+  bss_end = &__bss_end;
+
+
+  while(1){
   }
 }
